@@ -170,7 +170,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-5 mb-4 mb-lg-0">
                     <h2 class="fw-bold">Gia Nhập Cộng Đồng</h2>
-                    <p class="text-muted fs-5">Tham gia mạng lưới tình nguyện viên. Khi đăng ký, một email xác nhận sẽ được gửi tự động cho bạn và quản trị viên.</p>
+                    <p class="text-muted fs-5">Tham gia mạng lưới tình nguyện viên.</p>
                 </div>
                 <div class="col-lg-7">
                     <form id="ecoForm" class="row g-3">
@@ -267,7 +267,7 @@
         document.getElementById('ecoForm').onsubmit = function(e) {
             e.preventDefault();
             const btn = document.getElementById('submitBtn');
-            btn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Đang gửi mail kép...';
+            btn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Đang gửi mail...';
             btn.disabled = true;
 
             const params = {
@@ -281,7 +281,7 @@
                 emailjs.send('service_ulh982v', 'template_7h25vz3', params),
                 emailjs.send('service_ulh982v', 'template_v249xx5', params)
             ]).then(() => {
-                alert('Thành công! Email đã được gửi đến bạn và Admin.');
+                alert('Thành công!');
                 this.reset();
             }).catch(err => alert('Lỗi: ' + JSON.stringify(err)))
             .finally(() => {
@@ -312,4 +312,5 @@
     </script>
 </body>
 </html>
+
 
